@@ -204,18 +204,16 @@ function handleArrowClick(e) {
         currentStats[stat]++;
         // Don't change total - user must decrease another stat to balance
 
-        // If we just increased STR to 18, roll exceptional strength
-        if (stat === 'str' && currentStats[stat] === 18) {
+        // If we just increased STR to 18, only roll exceptional strength if not already set
+        if (stat === 'str' && currentStats[stat] === 18 && currentStats.strExceptional === 0) {
             currentStats.strExceptional = Math.floor(Math.random() * 100) + 1;
         }
     } else if (!isUp && currentStats[stat] > 3) {
         currentStats[stat]--;
         // Don't change total - user can now increase another stat
 
-        // If we just decreased STR from 18, clear exceptional strength
-        if (stat === 'str' && currentStats[stat] === 17) {
-            currentStats.strExceptional = 0;
-        }
+        // If we decreased STR from 18, keep the exceptional value (don't clear it)
+        // It will only be cleared on a fresh re-roll
     }
 
     // Recalculate total
