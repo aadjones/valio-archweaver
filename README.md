@@ -4,7 +4,7 @@ You know that feeling when you are consumed by generating the perfect stats for 
 
 Now you can do it in your browser! 
 
-🎲 **[Try it here](#)** (aadjones.github.io/valio-archweaver/)
+🎲 **[Try it here](https://aadjones.github.io/valio-archweaver/)**
 
 ---
 
