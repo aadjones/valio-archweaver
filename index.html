@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baldur's Gate 2 - Character Abilities</title>
+    <meta name="description"
+        content="Roll character stats for your Baldur's Gate 2 adventure. Create the perfect hero with optimal ability scores.">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Character Abilities</h1>
+            <div class="character-info">
+                <span class="name">Valio Archweaver</span> - <span class="class">Human Fighter</span>
+            </div>
+        </header>
+
+        <div class="stats-container">
+            <div class="stats-grid">
+                <div class="stat-box">
+                    <span class="stat-label">Strength</span>
+                    <div class="stat-display">
+                        <span class="stat-value" id="stat-str">10</span>
+                        <span class="stat-exceptional" id="stat-str-exceptional"></span>
+                    </div>
+                    <div class="stat-arrows">
+                        <button class="arrow-btn arrow-up" data-stat="str" aria-label="Increase Strength">+</button>
+                        <button class="arrow-btn arrow-down" data-stat="str" aria-label="Decrease Strength">-</button>
+                    </div>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-label">Dexterity</span>
+                    <div class="stat-display">
+                        <span class="stat-value" id="stat-dex">10</span>
+                    </div>
+                    <div class="stat-arrows">
+                        <button class="arrow-btn arrow-up" data-stat="dex" aria-label="Increase Dexterity">+</button>
+                        <button class="arrow-btn arrow-down" data-stat="dex" aria-label="Decrease Dexterity">-</button>
+                    </div>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-label">Constitution</span>
+                    <div class="stat-display">
+                        <span class="stat-value" id="stat-con">10</span>
+                    </div>
+                    <div class="stat-arrows">
+                        <button class="arrow-btn arrow-up" data-stat="con" aria-label="Increase Constitution">+</button>
+                        <button class="arrow-btn arrow-down" data-stat="con"
+                            aria-label="Decrease Constitution">-</button>
+                    </div>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-label">Intelligence</span>
+                    <div class="stat-display">
+                        <span class="stat-value" id="stat-int">10</span>
+                    </div>
+                    <div class="stat-arrows">
+                        <button class="arrow-btn arrow-up" data-stat="int" aria-label="Increase Intelligence">+</button>
+                        <button class="arrow-btn arrow-down" data-stat="int"
+                            aria-label="Decrease Intelligence">-</button>
+                    </div>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-label">Wisdom</span>
+                    <div class="stat-display">
+                        <span class="stat-value" id="stat-wis">10</span>
+                    </div>
+                    <div class="stat-arrows">
+                        <button class="arrow-btn arrow-up" data-stat="wis" aria-label="Increase Wisdom">+</button>
+                        <button class="arrow-btn arrow-down" data-stat="wis" aria-label="Decrease Wisdom">-</button>
+                    </div>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-label">Charisma</span>
+                    <div class="stat-display">
+                        <span class="stat-value" id="stat-cha">10</span>
+                    </div>
+                    <div class="stat-arrows">
+                        <button class="arrow-btn arrow-up" data-stat="cha" aria-label="Increase Charisma">+</button>
+                        <button class="arrow-btn arrow-down" data-stat="cha" aria-label="Decrease Charisma">-</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="total-display">
+                <div class="total-column">
+                    <div class="total-label">Total</div>
+                    <div class="total-value" id="total-value">60</div>
+                </div>
+                <div class="total-column">
+                    <div class="total-label">Available</div>
+                    <div class="points-available" id="points-available">0</div>
+                </div>
+            </div>
+
+            <div class="roll-counter">
+                Rolls: <span class="count" id="roll-count">0</span>
+            </div>
+        </div>
+
+        <div class="button-container">
+            <button id="roll-button">Re-Roll</button>
+            <button id="store-button">Store</button>
+            <button id="recall-button" disabled>Recall</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
