@@ -17,6 +17,11 @@ let rollCount = 0;
 let totalRolledPoints = 60; // Track the original rolled total for point distribution
 
 // DOM elements
+const beginScreen = document.getElementById('begin-screen');
+const beginButton = document.getElementById('begin-button');
+const characterScreen = document.getElementById('character-screen');
+const mainTitleMusic = document.getElementById('main-title-music');
+
 const statElements = {
     str: document.getElementById('stat-str'),
     dex: document.getElementById('stat-dex'),
@@ -223,7 +228,28 @@ function handleArrowClick(e) {
     updateDisplay();
 }
 
+/**
+ * Handle Begin button click
+ */
+function handleBegin() {
+    // Start music
+    mainTitleMusic.play().catch(err => {
+        console.log('Music play failed:', err);
+    });
+
+    // Hide begin screen, show character creation
+    beginScreen.style.display = 'none';
+    characterScreen.style.display = 'block';
+
+    // Do initial roll without sound
+    currentStats = rollAllStats();
+    totalRolledPoints = currentStats.total;
+    rollCount++;
+    updateDisplay();
+}
+
 // Event listeners
+beginButton.addEventListener('click', handleBegin);
 rollButton.addEventListener('click', handleReRoll);
 storeButton.addEventListener('click', handleStore);
 recallButton.addEventListener('click', handleRecall);
@@ -231,6 +257,9 @@ arrowButtons.forEach(button => button.addEventListener('click', handleArrowClick
 
 // Keyboard shortcuts for convenience
 document.addEventListener('keydown', (e) => {
+    // Only process shortcuts if character screen is visible
+    if (characterScreen.style.display === 'none') return;
+
     if (e.key === 'r' || e.key === 'R' || e.key === ' ') {
         e.preventDefault();
         handleReRoll();
@@ -242,6 +271,3 @@ document.addEventListener('keydown', (e) => {
         handleRecall();
     }
 });
-
-// Initialize with a roll
-handleReRoll();
